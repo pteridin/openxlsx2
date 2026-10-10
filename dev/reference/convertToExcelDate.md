@@ -1,0 +1,20 @@
+# Defunct: Convert to spreadsheet data
+
+Use
+[`convert_to_excel_date()`](https://janmarvin.github.io/openxlsx2/dev/reference/convert_to_excel_date.md).
+
+## Usage
+
+``` r
+convertToExcelDate(df, date1904 = FALSE)
+```
+
+## Arguments
+
+- df:
+
+  dataframe
+
+- date1904:
+
+  take different origin
