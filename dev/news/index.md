@@ -15,6 +15,19 @@
   [\#1689](https://github.com/JanMarvin/openxlsx2/pull/1689),
   [@SchmidtPaul](https://github.com/SchmidtPaul)).
 
+- Added the options `openxlsx2.na_inf_pos`, `openxlsx2.na_inf_neg` and
+  `openxlsx2.na_nan`. They define the value that is written to the
+  worksheet instead of `Inf`, `-Inf` and `NaN` in
+  [`write_xlsx()`](https://janmarvin.github.io/openxlsx2/dev/reference/write_xlsx.md),
+  [`wb_add_data()`](https://janmarvin.github.io/openxlsx2/dev/reference/wb_add_data.md)
+  and
+  [`wb_add_data_table()`](https://janmarvin.github.io/openxlsx2/dev/reference/wb_add_data_table.md).
+  A single number is written as a number, a single string as text. This
+  allows to mark, for example, censored values (`"<5"`, `">5"`). The
+  default `NULL` keeps the previous behavior: `Inf` and `-Inf` are
+  written as `#NUM!` and `NaN` as `#VALUE!`. The values are not mapped
+  back to `Inf`/`NaN` when reading.
+
 ### Fixes
 
 - A logic bug in `apply_numfmts()` was fixed that occured in combination

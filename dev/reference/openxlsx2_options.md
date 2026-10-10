@@ -62,6 +62,19 @@ options. Typically, this is done in the `.Rprofile` startup file
   and
   [`wb_add_data_table()`](https://janmarvin.github.io/openxlsx2/dev/reference/wb_add_data_table.md).
 
+- `options("openxlsx2.na_inf_pos" = NULL)`,
+  `options("openxlsx2.na_inf_neg" = NULL)` and
+  `options("openxlsx2.na_nan" = NULL)` replacement values written
+  instead of `Inf`, `-Inf` and `NaN`. With the default `NULL` these are
+  written as the error values `#NUM!` (`Inf`, `-Inf`) and `#VALUE!`
+  (`NaN`). A single number is written as a number, a single string as
+  text, e.g. `options("openxlsx2.na_inf_neg" = "<5")`. Applied by all
+  functions that write data, such as
+  [`write_xlsx()`](https://janmarvin.github.io/openxlsx2/dev/reference/write_xlsx.md),
+  [`wb_add_data()`](https://janmarvin.github.io/openxlsx2/dev/reference/wb_add_data.md)
+  and
+  [`wb_add_data_table()`](https://janmarvin.github.io/openxlsx2/dev/reference/wb_add_data_table.md).
+
 - `options("openxlsx2.zip_flags")` custom zip flags passed to
   [`utils::zip()`](https://rdrr.io/r/utils/zip.html) required when using
   a custom zip tool
